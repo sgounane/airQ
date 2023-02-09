@@ -7,4 +7,5 @@ https://www.digitalocean.com/community/tutorials/how-to-install-and-secure-the-m
 https://mqttx.app/
   3. Adding ESP32 board to Arduino IDE and intro To mqtt library
 https://randomnerdtutorials.com/esp32-mqtt-publish-bme680-arduino/
-
+  4. Flask Mqtt Client
+https://dev.to/emqx/how-to-use-mqtt-in-flask-b11
