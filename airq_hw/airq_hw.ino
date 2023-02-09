@@ -27,8 +27,8 @@ extern "C"
 }
 #include <AsyncMQTT_ESP32.h>
 
-//#define MQTT_HOST         IPAddress(192, 168, 2, 110)
-#define MQTT_HOST         "gounane.ovh"        // Broker address
+#define MQTT_HOST         IPAddress(51, 91 ,98, 162)
+//#define MQTT_HOST         "gounane.ovh"        // Broker address
 #define MQTT_PORT         1883
 static const char mqttUser[] = "chaari";
 static const char mqttPassword[] = "chaari2023";
@@ -37,7 +37,7 @@ unsigned long start;
 #define DHTPIN 2
 #define DHTTYPE DHT11
 DHT dht(DHTPIN, DHTTYPE);
-const char *PubTopic  = "aireq";               // Topic to publish
+const char *PubTopic  = "airq/room1";               // Topic to publish
 
 AsyncMqttClient mqttClient;
 TimerHandle_t mqttReconnectTimer;
@@ -46,7 +46,7 @@ TimerHandle_t wifiReconnectTimer;
 void connectToWifi()
 {
   Serial.println("Connecting to Wi-Fi...");
-  WiFi.begin("GNU-R", "@Adnane24yAsser!");
+  WiFi.begin("EBF", "ebf4you_");
 }
 
 void connectToMqtt()
@@ -132,7 +132,7 @@ void onMqttConnect(bool sessionPresent)
   uint16_t packetIdSub = mqttClient.subscribe(PubTopic, 2);
   Serial.print("Subscribing at QoS 2, packetId: ");
   Serial.println(packetIdSub);
-
+/*
   mqttClient.publish(PubTopic, 0, true, "ESP32 Test");
   Serial.println("Publishing at QoS 0");
 
@@ -143,7 +143,7 @@ void onMqttConnect(bool sessionPresent)
   uint16_t packetIdPub2 = mqttClient.publish(PubTopic, 2, true, "test 3");
   Serial.print("Publishing at QoS 2, packetId: ");
   Serial.println(packetIdPub2);
-
+*/
   printSeparationLine();
 }
 
