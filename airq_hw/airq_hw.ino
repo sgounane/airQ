@@ -246,7 +246,7 @@ void loop()
         Serial.println(F("Failed to read from DHT sensor!"));
         return;
       }
-    String val="Temp:"+String(t)+","+"Hum: "+String(h);
+    String val="{'Temp':'"+String(t)+"',"+"'Hum': '"+String(h)+"'}";
     
     Serial.print("--------------------------------------------------------------");
     Serial.print(val);
